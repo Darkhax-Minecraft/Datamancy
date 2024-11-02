@@ -1,0 +1,22 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.darkhax.datamancy.common.mixin",
+  "refmap": "datamancy.refmap.json",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "block.MixinFarmBlock",
+    "block.MixinRespawnAnchorBlock",
+    "block.MixinTurtleEggBlock",
+    "block.entity.AccessorBrewingStandBlockEntity",
+    "block.entity.MixinBrewingStandBlockEntity",
+    "entity.monster.MixinEnderman",
+    "entity.piglin.MixinPiglinAi",
+    "inventory.brewing.MixinBrewingStandMenuFuelSlot"
+  ],
+  "client": [],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
