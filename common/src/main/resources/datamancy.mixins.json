@@ -10,9 +10,11 @@
     "block.MixinTurtleEggBlock",
     "block.entity.AccessorBrewingStandBlockEntity",
     "block.entity.MixinBrewingStandBlockEntity",
+    "entity.animal.MixinWaterAnimal",
     "entity.monster.MixinEnderman",
     "entity.piglin.MixinPiglinAi",
-    "inventory.brewing.MixinBrewingStandMenuFuelSlot"
+    "inventory.brewing.MixinBrewingStandMenuFuelSlot",
+    "world.MixinNaturalSpawner"
   ],
   "client": [],
   "server": [],
