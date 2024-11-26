@@ -7,8 +7,8 @@ import net.minecraft.world.level.block.Block;
 public class BlockTags extends TagEntries<Block> {
 
     public final TagKey<Block> SUPPORTS_TURTLE_EGGS = of("supports_turtle_eggs");
-    public final TagKey<Block> SQUID_SPAWNS_IN = of("squid_spawns_in");
-    public final TagKey<Block> SQUID_SPAWNS_IN_AT_ANY_HEIGHT = of("squid_spawns_in_at_any_height");
+    public final TagKey<Block> AQUATIC_SPAWNS_IN = of("aquatic_spawns_in");
+    public final TagKey<Block> AQUATIC_SPAWNS_IN_AT_ANY_HEIGHT = of("aquatic_spawns_in_at_any_height");
 
     protected BlockTags() {
         super(Registries.BLOCK);

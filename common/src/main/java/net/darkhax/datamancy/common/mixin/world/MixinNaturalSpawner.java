@@ -17,9 +17,9 @@ public class MixinNaturalSpawner {
 
     @Inject(method = "isSpawnPositionOk(Lnet/minecraft/world/entity/SpawnPlacements$Type;Lnet/minecraft/world/level/LevelReader;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/EntityType;)Z", at = @At("HEAD"), cancellable = true)
     private static void check(SpawnPlacements.Type placementType, LevelReader level, BlockPos pos, EntityType<?> entityType, CallbackInfoReturnable<Boolean> cbi) {
-        if (placementType == SpawnPlacements.Type.IN_WATER && entityType == EntityType.SQUID) {
+        if (placementType == SpawnPlacements.Type.IN_WATER) {
             final BlockState state = level.getBlockState(pos);
-            if (state.is(Tags.BLOCKS.SQUID_SPAWNS_IN) || state.is(Tags.BLOCKS.SQUID_SPAWNS_IN_AT_ANY_HEIGHT)) {
+            if (state.is(Tags.BLOCKS.AQUATIC_SPAWNS_IN) || state.is(Tags.BLOCKS.AQUATIC_SPAWNS_IN_AT_ANY_HEIGHT)) {
                 cbi.setReturnValue(true);
             }
         }

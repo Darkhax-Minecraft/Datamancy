@@ -18,17 +18,15 @@ public class MixinWaterAnimal {
 
     @Inject(method = "checkSurfaceWaterAnimalSpawnRules(Lnet/minecraft/world/entity/EntityType;Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/world/entity/MobSpawnType;Lnet/minecraft/core/BlockPos;Lnet/minecraft/util/RandomSource;)Z", at = @At("HEAD"), cancellable = true)
     private static void checkSpawn(EntityType<? extends WaterAnimal> type, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource rng, CallbackInfoReturnable<Boolean> cbi) {
-        if (type == EntityType.SQUID) {
-            final BlockState state = level.getBlockState(pos);
-            if (state.is(Tags.BLOCKS.SQUID_SPAWNS_IN_AT_ANY_HEIGHT)) {
+        final BlockState state = level.getBlockState(pos);
+        if (state.is(Tags.BLOCKS.AQUATIC_SPAWNS_IN_AT_ANY_HEIGHT)) {
+            cbi.setReturnValue(true);
+        }
+        else if (state.is(Tags.BLOCKS.AQUATIC_SPAWNS_IN)) {
+            final int seaLevel = level.getSeaLevel();
+            final int depthLimit = seaLevel - 13;
+            if (pos.getY() >= depthLimit && pos.getY() <= seaLevel) {
                 cbi.setReturnValue(true);
-            }
-            else if (state.is(Tags.BLOCKS.SQUID_SPAWNS_IN)) {
-                final int seaLevel = level.getSeaLevel();
-                final int depthLimit = seaLevel - 13;
-                if (pos.getY() >= depthLimit && pos.getY() <= seaLevel) {
-                    cbi.setReturnValue(true);
-                }
             }
         }
     }
