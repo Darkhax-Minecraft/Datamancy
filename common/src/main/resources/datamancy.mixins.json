@@ -10,6 +10,7 @@
     "block.MixinTurtleEggBlock",
     "block.entity.AccessorBrewingStandBlockEntity",
     "block.entity.MixinBrewingStandBlockEntity",
+    "entity.animal.MixinGlowSquid",
     "entity.animal.MixinWaterAnimal",
     "entity.monster.MixinEnderman",
     "entity.piglin.MixinPiglinAi",
