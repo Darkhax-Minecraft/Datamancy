@@ -11,6 +11,7 @@ public class ItemTags extends TagEntries<Item> {
     public final TagKey<Item> BREWING_STAND_FUEL = of("brewing_fuel");
     public final TagKey<Item> PREVENT_TRAMPLING = of("prevents_trampling");
     public final TagKey<Item> RESPAWN_ANCHOR_FUEL = of("respawn_anchor_fuel");
+    public final TagKey<Item> UNBREAKABLE = of("unbreakable");
 
     protected ItemTags() {
         super(Registries.ITEM);

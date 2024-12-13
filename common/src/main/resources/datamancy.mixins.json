@@ -15,6 +15,7 @@
     "entity.monster.MixinEnderman",
     "entity.piglin.MixinPiglinAi",
     "inventory.brewing.MixinBrewingStandMenuFuelSlot",
+    "item.MixinItemStack",
     "world.MixinNaturalSpawner"
   ],
   "client": [],
