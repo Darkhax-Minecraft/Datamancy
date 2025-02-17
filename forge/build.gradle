@@ -20,9 +20,6 @@ legacyForge {
         client {
             client()
         }
-        data {
-            data()
-        }
         server {
             server()
         }
