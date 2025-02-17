@@ -163,6 +163,7 @@ task publishCurseForge(type: net.darkhax.curseforgegradle.TaskPublishCurseForge)
     mainFile.addRequirement('bookshelf')
     mainFile.releaseType = 'release'
     mainFile.addGameVersion('Client', 'Server')
+    mainFile.addModLoader('Forge')
 
     // Append Patreon Supporters
     def patreonInfo = project.findProperty('patreon')
@@ -196,6 +197,7 @@ modrinth {
     versionName.set("${mod_name}-Forge-${minecraft_version}-$version")
     versionType.set('release')
     uploadFile.set(tasks.jar)
+    loaders = ["forge"]
     dependencies {
         required.project("bookshelf-lib")
     }
