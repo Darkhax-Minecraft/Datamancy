@@ -198,6 +198,7 @@ modrinth {
     versionType.set('release')
     uploadFile.set(tasks.jar)
     loaders = ["forge"]
+    gameVersions = ["${minecraft_version}"]
     dependencies {
         required.project("bookshelf-lib")
     }
