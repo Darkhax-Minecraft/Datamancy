@@ -16,6 +16,7 @@
     "entity.piglin.MixinPiglinAi",
     "inventory.brewing.MixinBrewingStandMenuFuelSlot",
     "item.MixinItemStack",
+    "loot.MixinSetItemDamageFunction",
     "world.MixinNaturalSpawner"
   ],
   "client": [],

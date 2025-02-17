@@ -1,3 +1,9 @@
 {
-  "values": []
+  "values": [
+    "minecraft:iron_pickaxe",
+    "minecraft:iron_boots",
+    "minecraft:iron_chestplate",
+    "minecraft:golden_leggings",
+    "minecraft:fishing_rod"
+  ]
 }
