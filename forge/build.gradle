@@ -33,9 +33,7 @@ legacyForge {
 }
 
 dependencies {
-
     compileOnly project(':common')
-
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 
@@ -78,33 +76,18 @@ processResources {
         buildProps.put('mod_supporters', supporters.join(', '))
     }
 
-    filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
+    filesMatching(['META-INF/mods.toml', 'pack.mcmeta', "${mod_id}.mixins.json".toString()]) {
 
         expand buildProps
-    }
-
-    if (project.ext.mixin_enabled) {
-        filesMatching(["${mod_id}.mixins.json".toString()]) {
-
-            expand buildProps
-        }
     }
 }
 
 jar.finalizedBy('reobfJar')
 
 jar {
-
-    manifest {
-
-        def newProps = [:]
-
-        if (project.ext.mixin_enabled) {
-            newProps['MixinConfigs'] = "${mod_id}.mixins.json"
-        }
-
-        attributes(newProps)
-    }
+    manifest.attributes([
+            "MixinConfigs": "${mod_id}.mixins.json"
+    ])
 }
 
 // -- Mixin Support
