@@ -135,7 +135,7 @@ task publishCurseForge(type: net.darkhax.curseforgegradle.TaskPublishCurseForge)
 
     apiToken = findProperty('curse_auth')
 
-    def mainFile = upload(curse_project, jar)
+    def mainFile = upload(curse_project, reobfJar)
     mainFile.addModLoader('NeoForge')
     mainFile.changelogType = 'markdown'
     mainFile.changelog = project.ext.mod_changelog
@@ -176,7 +176,7 @@ modrinth {
     changelog = changelog
     versionName.set("${mod_name}-Forge-${minecraft_version}-$version")
     versionType.set('release')
-    uploadFile.set(tasks.jar)
+    uploadFile.set(tasks.reobfJar)
     loaders = ["forge"]
     gameVersions = ["${minecraft_version}"]
     dependencies {
